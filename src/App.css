@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+}
+* {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background-image: linear-gradient(to bottom right, #ff9b73, #1ecdc9);
+	height: 100vh;
+	font-family: 'Open Sans', Helvetica, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50em;
+  height: 60em;
+	transform: translate(-50%, -50%);
+  border-radius: 25px;
+  background: #fff;
+  color: #333;
+	padding: 2.7em 3em 4em 3.4em;
+}
+
+.frame div {
+    height: 37em;
+		padding-right: 1em;
+		overflow-y: scroll;
+}
+
+
+header {
+	text-align: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 4px;
+}
+
+h2 {
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.task-message {
+		font-size: 1.8rem;
+		padding-top: 1em;
+		height: 10em;
+}
+
+.add-task {
+    width: 70%;
+    padding: 20px;
+    margin: 20px 5px;
+    border: 3px solid #333;
+    border-radius: 15px;
+    font-size: 25px;
+		color: #3d3d3d;
+		background-color: #f8f8f8;
+}
+
+
+.list {
+	list-style: none;
+	margin-top: 25px;
+}
+
+.list li {
+	padding-bottom: 20px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+  align-items: center;
+}
+
+.list label {
+	flex-grow: 1;
+  width: 0;
+}
+
+form {
+  	font-size: 1.8rem;
+		justify-content: center;
+}
+
+.checked {
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="checkbox"] {
+  appearance: none;
+  font: inherit;
+  width: 1.55em;
+  height: 1.55em;
+  border: 0.15em solid #addeb3;
+  margin-right: 5px;
+	margin-left: 10px;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type='checkbox']:checked:after {
+  content: '✔';
+  margin: 6px;
+}
+
+.btn-delete, .btn-reverse, .btn-add {
+    padding: 0.4em 0.6em;
+    margin-left: 0.5em;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.8rem;
+}
+
+.btn-reverse {
+    margin-top: 0.7em;
+		margin-left: 0;
+		margin-bottom: 0;
+}
+
+.btn-add {
+	background-color: #addeb3;
+	padding: 0.55em 0.7em 0.5em 0.7em;
 }
